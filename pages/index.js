@@ -1,10 +1,9 @@
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import React from 'react';
+import Capa from '../src/components/Capa';
 
 export default function Home() {
-  return <Title>My page</Title>
+  // eslint-disable-next-line react/react-in-jsx-scope
+  return (
+    <Capa />
+  );
 }
