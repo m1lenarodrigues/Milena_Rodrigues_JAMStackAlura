@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Capa from '../src/components/commons/Capa';
 import Menu from '../src/components/commons/Menu';
 import WrapperProjetos from '../src/components/commons/WrapperProjetos';
+import Footer from '../src/components/commons/Footer';
 
 export default function Home() {
   // eslint-disable-next-line react/react-in-jsx-scope
@@ -22,6 +23,7 @@ export default function Home() {
         <Capa />
         <Menu />
         <WrapperProjetos />
+        <Footer />
       </Geral>
     </div>
   );

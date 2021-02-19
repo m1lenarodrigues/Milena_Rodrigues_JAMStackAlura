@@ -2,15 +2,18 @@
     "lista": [
         {
             "url": "https://insta-alura.m1lenarodrigues.vercel.app/",
-            "title": "Insta Alura"
+            "title": "Insta Alura",
+            "img": "/images/insta.jpg"
         },
         {
             "url": "https://greys-anatomy-quiz.m1lenarodrigues.vercel.app/",
-            "title": "Quiz Alura"
+            "title": "Quiz Alura",
+            "img": "/images/quiz.jpg"
         },
         {
             "url": "https://greys-anatomy-quiz.m1lenarodrigues.vercel.app/",
-            "title": "Quiz Alura Dois"
+            "title": "Insta Alura Dois",
+            "img": "/images/insta.jpg"
         }
     ]
 }

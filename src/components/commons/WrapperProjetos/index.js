@@ -9,20 +9,22 @@ import SectionTitle from '../SectionTitle';
 import Projetos from './style';
 import projetos from '../../../../projetos.json';
 import Card from '../Card';
+import CardDestaque from '../CardDestaque';
 
 export default function WrapperProjetos() {
   const listaDeProjetos = projetos.lista;
 
-  console.log("ne array n?", listaDeProjetos)
-
+  console.log('ne array n?', listaDeProjetos);
   return (
     <Projetos>
       <SectionTitle>MEUS PROJETOS</SectionTitle>
       <Cards>
-        {listaDeProjetos.map((projeto, projetoIndex) => {
-          <Card key={projetoIndex} urlProjeto={projeto.url} />;
-        })}
+        {listaDeProjetos.map((projeto, index) => (
+          <Card key={index} url={projeto.url} titulo={projeto.title} img={projeto.img} />
+        ))}
       </Cards>
+
+      <CardDestaque />
     </Projetos>
   );
 }
