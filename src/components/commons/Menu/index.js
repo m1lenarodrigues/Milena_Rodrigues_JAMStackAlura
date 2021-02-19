@@ -1,4 +1,5 @@
 import React from 'react';
+import Text from '../../foundation/Text';
 import { MenuWrapper } from './styles/MenuWrapper';
 
 export default function Menu() {
@@ -22,7 +23,7 @@ export default function Menu() {
       <MenuWrapper.Central>
         {links.map((link) => (
           <li key={link.url}>
-            <p>{link.texto}</p>
+            <Text tag="a" variant="smallestException" href={link.url}>{link.texto}</Text>
           </li>
         ))}
       </MenuWrapper.Central>
