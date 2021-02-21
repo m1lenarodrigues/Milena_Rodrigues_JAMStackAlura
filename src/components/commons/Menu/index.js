@@ -17,13 +17,14 @@ export default function Menu() {
       url: '/sobre',
     },
   ];
+
   return (
-    <MenuWrapper>
+    <MenuWrapper teste="teste">
 
       <MenuWrapper.Central>
         {links.map((link) => (
           <li key={link.url}>
-            <Text tag="a" variant="titulo1" href={link.url}>{link.texto}</Text>
+            <Text tag="a" href={link.url}>{link.texto}</Text>
           </li>
         ))}
       </MenuWrapper.Central>

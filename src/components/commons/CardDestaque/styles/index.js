@@ -1,10 +1,16 @@
 /* eslint-disable import/prefer-default-export */
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 
 export const Destaque = styled.div`
-    width:100%:
-    background:#eee;
-    max-height:300px;
+    width:90%;
+    min-height:450px;
+
+    ${breakpointsMedia({
+    md: css`
+        margin-left:70px;
+    `,
+  })} 
 `;
 
 Destaque.Titulo = styled.h2`
@@ -35,6 +41,10 @@ Destaque.Imagem = styled.img`
     margin:10px;
     border: 2px solid #000;
     float:left;
+    &:hover{
+        box-shadow: 3px 2px 5px ${({ theme }) => theme.colors.primary.main.color};
+        transition: ${({ theme }) => theme.transition};
+      }
 `;
 
 Destaque.Texto = styled.p`
@@ -42,4 +52,15 @@ Destaque.Texto = styled.p`
     margin:0;
     width: 50%;
     float: right;
+
+    ${breakpointsMedia({
+    xs: css`
+        padding-top:20px;
+        width:100%;
+        `,
+    md: css`
+        width:50%;
+    `,
+  })} 
 `;
+export default Destaque;

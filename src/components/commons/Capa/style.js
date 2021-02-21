@@ -1,4 +1,6 @@
-import styled from 'styled-components';
+/* eslint-disable no-undef */
+import styled, { css } from 'styled-components';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 // eslint-disable-next-line import/prefer-default-export
 export const CapaContainer = styled.div`
@@ -11,6 +13,17 @@ export const CapaContainer = styled.div`
     justify-content: center;
     min-height: 30vh;
     width: 90%;
+
+    ${breakpointsMedia({
+    xs: css`
+          justify-content: center;
+          height: 45vh;
+        `,
+    md: css`
+          justify-content: space-around;
+          height: 60vh;
+        `,
+  })}
     
 `;
 

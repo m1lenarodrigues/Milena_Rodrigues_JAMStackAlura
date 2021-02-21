@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/destructuring-assignment */
@@ -6,12 +7,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css }from 'styled-components';
 import CardLink from '../CardLink';
 import CardTitulo from '../CardTitulo';
 import CardImagem from '../CardImagem';
 
 import Text from '../../foundation/Text';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 export default function Card(props) {
   const Geral = styled.div`
@@ -30,6 +32,22 @@ export default function Card(props) {
     padding:20px;
     width:100%;
     float:left;
+
+    ${breakpointsMedia({
+    xs: css`
+        justify-content: initial;
+      `,
+    md: css`
+        justify-content: center;
+        align-items: center;
+      `,
+  })}
+
+
+    &:hover{
+      box-shadow: 3px 2px 5px ${({ theme }) => theme.colors.primary.main.color};
+      transition: ${({ theme }) => theme.transition};
+    }
 
   `;
 

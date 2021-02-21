@@ -38,12 +38,20 @@ const titulo1 = css`
     line-height: ${theme.typographyVariants.titulo1.lineHeight};
   `}
 `;
+const smallestException = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.smallestException.fontSize};
+    font-weight: ${theme.typographyVariants.smallestException.fontWeight};
+    line-height: ${theme.typographyVariants.smallestException.lineHeight};
+  `}
+`;
 
 export const TextStyleVariants = {
   paragraph1,
   titulo1,
   subTitle,
   title,
+  smallestException,
 
 };
 
@@ -73,5 +81,5 @@ Text.defaultProps = {
 Text.propTypes = {
   children: PropTypes.node.isRequired,
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'a', 'span']),
-  variant: PropTypes.oneOf(['paragraph1', 'titulo1', 'subTitle', 'title']),
+  variant: PropTypes.oneOf(['paragraph1', 'titulo1', 'subTitle', 'title', 'smallestException']),
 };
