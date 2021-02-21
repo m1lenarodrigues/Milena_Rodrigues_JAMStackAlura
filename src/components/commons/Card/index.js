@@ -11,6 +11,8 @@ import CardLink from '../CardLink';
 import CardTitulo from '../CardTitulo';
 import CardImagem from '../CardImagem';
 
+import Text from '../../foundation/Text';
+
 export default function Card(props) {
   const Geral = styled.div`
     align-items: center;
@@ -34,9 +36,11 @@ export default function Card(props) {
   return (
     <Geral>
       <CardLink href={props.url} target="_blank">
-        <CardTitulo>
-          {props.titulo}
-        </CardTitulo>
+        <Text tag="a" variant="subTitle">
+          <CardTitulo tag="a" variant="subTitle">
+            {props.titulo}
+          </CardTitulo>
+        </Text>
         <CardImagem src={props.img} />
       </CardLink>
     </Geral>

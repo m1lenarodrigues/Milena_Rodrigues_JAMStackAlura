@@ -10,6 +10,7 @@ import Projetos from './style';
 import projetos from '../../../../projetos.json';
 import Card from '../Card';
 import CardDestaque from '../CardDestaque';
+import Text from '../../foundation/Text';
 
 export default function WrapperProjetos() {
   const listaDeProjetos = projetos.lista;
@@ -17,7 +18,9 @@ export default function WrapperProjetos() {
   console.log('ne array n?', listaDeProjetos);
   return (
     <Projetos>
-      <SectionTitle>MEUS PROJETOS</SectionTitle>
+      <Text variant="title">
+        <SectionTitle>MEUS PROJETOS</SectionTitle>
+      </Text>
       <Cards>
         {listaDeProjetos.map((projeto, index) => (
           <Card key={index} url={projeto.url} titulo={projeto.title} img={projeto.img} />

@@ -23,7 +23,7 @@ export default function Menu() {
       <MenuWrapper.Central>
         {links.map((link) => (
           <li key={link.url}>
-            <Text tag="a" variant="smallestException" href={link.url}>{link.texto}</Text>
+            <Text tag="a" variant="titulo1" href={link.url}>{link.texto}</Text>
           </li>
         ))}
       </MenuWrapper.Central>

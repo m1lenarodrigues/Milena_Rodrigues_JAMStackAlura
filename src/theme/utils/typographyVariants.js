@@ -2,31 +2,31 @@
 export const typographyVariants = {
   // [title]
   title: {
-    fontSize: '8.5rem',
+    fontSize: '40px',
     fontWeight: '400',
-    lineHeight: 1,
+    lineHeight: '72px',
     letterSpacing: '.04em',
   },
   // [subTitle]
   subTitle: {
-    fontSize: '1.5rem',
-    fontWeight: '400',
-    lineHeight: 1,
+    fontSize: '32px',
+    fontWeight: '700',
+    lineHeight: '38,4px',
     letterSpacing: '.05em',
   },
 
   // [title1]
-  title1: {
-    fontSize: '2.8rem',
+  titulo1: {
+    fontSize: '28px',
     fontWeight: '400',
-    lineHeight: 1,
-    letterSpacing: '.05em',
+    lineHeight: '33,6px',
+    letterSpacing: '.01em',
   },
   // [paragraph1]
   paragraph1: {
     fontSize: '1rem',
     fontWeight: '400',
-    lineHeight: 1.25,
+    lineHeight: '33,6px',
     letterSpacing: '.01em',
   },
 };

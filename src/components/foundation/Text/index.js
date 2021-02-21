@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/prop-types */
 import React from 'react';
@@ -13,8 +14,37 @@ const paragraph1 = css`
     line-height: ${theme.typographyVariants.paragraph1.lineHeight};
   `}
 `;
+
+const title = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.title.fontSize};
+    font-weight: ${theme.typographyVariants.title.fontWeight};
+    line-height: ${theme.typographyVariants.title.lineHeight};
+  `}
+`;
+
+const subTitle = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.subTitle.fontSize};
+    font-weight: ${theme.typographyVariants.subTitle.fontWeight};
+    line-height: ${theme.typographyVariants.subTitle.lineHeight};
+  `}
+`;
+
+const titulo1 = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.titulo1.fontSize};
+    font-weight: ${theme.typographyVariants.titulo1.fontWeight};
+    line-height: ${theme.typographyVariants.titulo1.lineHeight};
+  `}
+`;
+
 export const TextStyleVariants = {
   paragraph1,
+  titulo1,
+  subTitle,
+  title,
+
 };
 
 const TextBase = styled.span`
@@ -42,6 +72,6 @@ Text.defaultProps = {
 
 Text.propTypes = {
   children: PropTypes.node.isRequired,
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  variant: PropTypes.oneOf(['paragraph1']),
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'a', 'span']),
+  variant: PropTypes.oneOf(['paragraph1', 'titulo1', 'subTitle', 'title']),
 };

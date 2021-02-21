@@ -1,6 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
+import Text from '../../foundation/Text';
 import { Destaque } from './styles';
 
 export default function CardDestaque() {
@@ -12,17 +13,23 @@ export default function CardDestaque() {
 
   return (
     <Destaque>
-      <Destaque.Titulo>
-        {' '}
-        {title}
-        {' '}
-      </Destaque.Titulo>
+      <Text variant="title">
+        <Destaque.Titulo>
+          {' '}
+          {title}
+          {' '}
+        </Destaque.Titulo>
+      </Text>
       <Destaque.Link href={url}>
         <Destaque.Imagem src={img} />
       </Destaque.Link>
       <Destaque.Texto>
-        <Destaque.SubTitulo>{tituloDestaque}</Destaque.SubTitulo>
-        {texto}
+        <Text variant="subTitle">
+          <Destaque.SubTitulo>{tituloDestaque}</Destaque.SubTitulo>
+        </Text>
+        <Text variant="paragraph1">
+          {texto}
+        </Text>
       </Destaque.Texto>
 
     </Destaque>
