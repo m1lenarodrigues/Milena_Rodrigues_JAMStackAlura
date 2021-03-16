@@ -11,7 +11,7 @@ export const colors = {
       color: '#fff',
     },
     main: {
-      color: '#fff',
+      color: '#f6f6f6;',
     },
   },
   borders: {
