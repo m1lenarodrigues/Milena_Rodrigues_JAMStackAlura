@@ -56,9 +56,10 @@ export const TextStyleVariants = {
 };
 
 const TextBase = styled.span`
-    ${({ variant }) => TextStyleVariants[variant]}
     color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
     ${propToStyle('textAlign')}
+    font-size:25px;
+    font-weight:bold;
     
   `;
 

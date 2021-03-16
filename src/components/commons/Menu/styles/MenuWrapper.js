@@ -1,22 +1,13 @@
 import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
-import { TextStyleVariants } from '../../../foundation/Text';
-
-
 // eslint-disable-next-line import/prefer-default-export
 export const MenuWrapper = styled.nav`
-  font-family: 'Rubik', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    flex-wrap: wrap;
-    padding-left: 28px;
-    padding-right: 28px;
-    width: 90%;
+    font-family: Amatic SC;
+   
 
     ${breakpointsMedia({
     md: css`
-    width: 90%;
+    width: 100%;
     height: 67px;
     left: 0px;
     top: 1025px;
@@ -27,7 +18,7 @@ export const MenuWrapper = styled.nav`
     xl: css`
           max-width: 1222px;
         `,
-  })} */
+  })} 
 `;
 
 MenuWrapper.Central = styled.div`
@@ -40,12 +31,4 @@ MenuWrapper.Central = styled.div`
   border-bottom: 5px groove #f06292;
   padding: 12px;
 
-  ${breakpointsMedia({
-    xs: css`
-          ${TextStyleVariants.smallestException}
-      `,
-    md: css`
-        ${TextStyleVariants.paragraph1}
-      `,
-  })}
 `;

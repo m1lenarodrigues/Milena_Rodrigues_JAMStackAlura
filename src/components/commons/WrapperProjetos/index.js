@@ -15,11 +15,10 @@ import Text from '../../foundation/Text';
 export default function WrapperProjetos() {
   const listaDeProjetos = projetos.lista;
 
-  console.log('ne array n?', listaDeProjetos);
   return (
     <Projetos>
       <Text variant="title">
-        <SectionTitle>MEUS PROJETOS</SectionTitle>
+        <SectionTitle>Meus Projetos</SectionTitle>
       </Text>
       <Cards>
         {listaDeProjetos.map((projeto, index) => (

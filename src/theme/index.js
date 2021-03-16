@@ -53,7 +53,7 @@ export const breakpoints = {
 
 export default {
   colors,
-  fontFamily: 'Fira Sans Condensed',
+  fontFamily: 'Amatic SC',
   typographyVariants,
   breakpoints,
 };

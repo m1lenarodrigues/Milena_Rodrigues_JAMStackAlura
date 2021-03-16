@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css }  from 'styled-components';
 import Capa from '../src/components/commons/Capa';
 import Menu from '../src/components/commons/Menu';
 import WrapperProjetos from '../src/components/commons/WrapperProjetos';
 import Footer from '../src/components/commons/Footer';
+import { breakpointsMedia } from '../src/theme/utils/breakpointsMedia';
 
 export default function Home() {
   // eslint-disable-next-line react/react-in-jsx-scope
@@ -14,8 +15,23 @@ export default function Home() {
     flex-direction:column;
     justify-content:center;
     min-height: 100vh;
-    -webkit-box-align: center;
     align-items: center;
+
+    ${breakpointsMedia({
+      lg: css`
+      
+          `,
+      md: css`
+           
+          `,
+      xl: css`
+           
+          `,
+      sm: css`
+        
+        `,
+    })} 
+  
   `;
   return (
     <div>

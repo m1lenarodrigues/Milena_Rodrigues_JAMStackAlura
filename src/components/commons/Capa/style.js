@@ -4,7 +4,6 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 // eslint-disable-next-line import/prefer-default-export
 export const CapaContainer = styled.div`
-    background-color: ${({ theme }) => theme.colors.background.light.color};
     display: flex;
     flex-direction: column;
     -webkit-box-align: center;
@@ -12,7 +11,6 @@ export const CapaContainer = styled.div`
     -webkit-box-pack: center;
     justify-content: center;
     min-height: 30vh;
-    width: 90%;
 
     ${breakpointsMedia({
     xs: css`

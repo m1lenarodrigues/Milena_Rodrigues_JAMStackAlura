@@ -2,8 +2,7 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 export const Projetos = styled.div`
-background-color: ${({ theme }) => theme.colors.background.light.color};
-width: 90%;
+background-color: ${({ theme }) => theme.colors.background.main.color};
 min-height: 30vh;
 font-family: ${({ theme }) => theme.fontFamily};
 ${breakpointsMedia({

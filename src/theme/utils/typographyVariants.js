@@ -31,8 +31,9 @@ export const typographyVariants = {
   },
 
   smallestException: {
-    fontSize: '12px',
-    fontWeight: '400',
+    
+    fontSize: '25px', 
+    fontweight:'bold',
     lineHeight: 1, // 100%
   },
 };
