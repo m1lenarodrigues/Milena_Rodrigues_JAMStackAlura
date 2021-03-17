@@ -4,14 +4,21 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 // eslint-disable-next-line import/prefer-default-export
 export const Cards = styled.div`
-    width:100%;
     min-height:350px;
+    margin: 0 auto;
+    width: 75%;
     font-family: ${({ theme }) => theme.fontFamily};
 
     ${breakpointsMedia({
     md: css`
-        margin-left:70px;
+        padding-left:40px;
             `,
+    xl: css`
+        padding-left:40px;
+            `,
+    lg: css`
+        padding-left:50;
+        `,
   })} 
     
 `;

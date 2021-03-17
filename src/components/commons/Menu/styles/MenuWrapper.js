@@ -3,20 +3,17 @@ import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 // eslint-disable-next-line import/prefer-default-export
 export const MenuWrapper = styled.nav`
     font-family: Amatic SC;
-   
-
+    width:100%;
+  
     ${breakpointsMedia({
-    md: css`
-    width: 100%;
-    height: 67px;
-    left: 0px;
-    top: 1025px;
-        `,
-    lg: css`
-          max-width: 1160px; 
-        `,
-    xl: css`
-          max-width: 1222px;
+      sm: css`
+     
+      `,
+      md: css`
+          `,
+      lg: css`      
+          `,
+      xl: css`    
         `,
   })} 
 `;

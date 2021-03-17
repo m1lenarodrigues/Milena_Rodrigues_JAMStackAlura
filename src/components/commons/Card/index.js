@@ -18,20 +18,15 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 export default function Card(props) {
   const Geral = styled.div`
     align-items: center;
+    max-width:350px;
+    min-width: 280px;
     background-color: #ffffffE6;
     border: 2px groove #f06292;
     box-shadow: 1px 1px 8px 1px black;
-    display:flex;
-    flex-direction:column;
-    margin:10px 10px 20px 10px;
-    max-width:350px;
-    min-width: 280px;
-    min-height: 179px;
-    max-height:350px;
-    transition: .3s;
-    padding:20px;
-    width:100%;
-    float:left;
+    flex-direction:row;
+    margin:11px;
+    display: -webkit-inline-box;
+    
 
     ${breakpointsMedia({
     xs: css`

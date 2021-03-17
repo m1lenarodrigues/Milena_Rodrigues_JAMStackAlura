@@ -3,14 +3,8 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../../theme/utils/breakpointsMedia';
 
 export const Destaque = styled.div`
-    width:90%;
-    min-height:450px;
-
-    ${breakpointsMedia({
-    md: css`
-        margin-left:70px;
-    `,
-  })} 
+    width:75%;
+    margin:0 auto;
 `;
 
 Destaque.Titulo = styled.h2`
@@ -49,7 +43,7 @@ Destaque.Imagem = styled.img`
 
 Destaque.Texto = styled.p`
     color: ${({ theme }) => theme.colors.fonts.light.color};
-    margin:0;
+    margin:0 auto;
     width: 50%;
     float: right;
 

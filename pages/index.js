@@ -16,19 +16,20 @@ export default function Home() {
     justify-content:center;
     min-height: 100vh;
     align-items: center;
-
+    overflow-x: hidden; 
+    
     ${breakpointsMedia({
       lg: css`
-      
+      min-width: 1200px;
           `,
       md: css`
-           
+      min-width:768px;
           `,
       xl: css`
-           
+      min-width: 992px;
           `,
       sm: css`
-        
+      min-width: 576px;
         `,
     })} 
   

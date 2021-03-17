@@ -2,20 +2,11 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 export const Projetos = styled.div`
-background-color: ${({ theme }) => theme.colors.background.main.color};
-min-height: 30vh;
-font-family: ${({ theme }) => theme.fontFamily};
-${breakpointsMedia({
-    xs: css`
-            flex-direction: column;
-            width: 80%;
-            padding-bottom: 20px;
-        `,
-    md: css`
-            justify-content: center;
-            width: 90%;
-        `,
-  })}
+    background-color: ${({ theme }) => theme.colors.background.main.color};
+    font-family: ${({ theme }) => theme.fontFamily};
+    min-height: 100vh;
+    width: 100vw;
+    display:table;
 `;
 
 export default Projetos;
