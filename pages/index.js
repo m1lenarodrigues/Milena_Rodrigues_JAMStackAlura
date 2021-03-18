@@ -5,6 +5,9 @@ import Menu from '../src/components/commons/Menu';
 import WrapperProjetos from '../src/components/commons/WrapperProjetos';
 import Footer from '../src/components/commons/Footer';
 import { breakpointsMedia } from '../src/theme/utils/breakpointsMedia';
+import { Button } from '../src/components/commons/Button';
+import  Modal  from '../src/components/commons/Modal';
+import { Box }from '../src/components/foundation/Box';
 
 export default function Home() {
   // eslint-disable-next-line react/react-in-jsx-scope
@@ -34,12 +37,41 @@ export default function Home() {
     })} 
   
   `;
+
+  const [isModalOpen, setModalOpen] = React.useState(false);
+
   return (
     <div>
       <Geral>
+
+     {isModalOpen && 
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => {
+            setModalOpen(false);
+          }}  >
+          {(propsDoModal) => (
+            <Box
+              backgroundColor="white"
+                {...propsDoModal}>
+          
+              <div>Modalzinho aparecendo</div>
+            </Box>
+            
+          )}
+
+        </Modal> 
+      }
         <Capa />
         <Menu />
         <WrapperProjetos />
+
+        <Button
+          onClick={() => {
+            setModalOpen(!isModalOpen);
+          }}>
+          Entrar em contato
+        </Button>
         <Footer />
       </Geral>
     </div>
