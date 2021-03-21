@@ -6,6 +6,10 @@ export const typographyVariants = {
     fontWeight: '400',
     lineHeight: '72px',
     letterSpacing: '.04em',
+    fontFamily:"Amatic SC",
+  },
+  titleModal :{
+    
   },
   // [subTitle]
   subTitle: {

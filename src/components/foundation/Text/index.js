@@ -1,6 +1,3 @@
-/* eslint-disable no-shadow */
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import get from 'lodash/get';
 import styled, { css } from 'styled-components';
@@ -16,6 +13,14 @@ const paragraph1 = css`
 `;
 
 const title = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.title.fontSize};
+    font-weight: ${theme.typographyVariants.title.fontWeight};
+    line-height: ${theme.typographyVariants.title.lineHeight};
+  `}
+`;
+
+const titleModal = css`
   ${({ theme }) => css`
     font-size: ${theme.typographyVariants.title.fontSize};
     font-weight: ${theme.typographyVariants.title.fontWeight};
@@ -52,6 +57,7 @@ export const TextStyleVariants = {
   subTitle,
   title,
   smallestException,
+  titleModal
 
 };
 
@@ -60,6 +66,7 @@ const TextBase = styled.span`
     ${propToStyle('textAlign')}
     font-size:25px;
     font-weight:bold;
+    font-family:Amatic SC;
     
   `;
 
@@ -80,7 +87,7 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-  children: PropTypes.node.isRequired,
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'a', 'span']),
-  variant: PropTypes.oneOf(['paragraph1', 'titulo1', 'subTitle', 'title', 'smallestException']),
+  tag: PropTypes.string,
+  variant: PropTypes.string,
+  children: PropTypes.node,
 };

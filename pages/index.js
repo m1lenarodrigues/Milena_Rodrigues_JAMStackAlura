@@ -7,7 +7,7 @@ import Footer from '../src/components/commons/Footer';
 import { breakpointsMedia } from '../src/theme/utils/breakpointsMedia';
 import { Button } from '../src/components/commons/Button';
 import  Modal  from '../src/components/commons/Modal';
-import { Box }from '../src/components/foundation/Box';
+import FormContato from '../src/components/patterns/formContato';
 
 export default function Home() {
   // eslint-disable-next-line react/react-in-jsx-scope
@@ -51,14 +51,8 @@ export default function Home() {
             setModalOpen(false);
           }}  >
           {(propsDoModal) => (
-            <Box
-              backgroundColor="white"
-                {...propsDoModal}>
-          
-              <div>Modalzinho aparecendo</div>
-            </Box>
-            
-          )}
+            <FormContato propsDoModal={propsDoModal} />
+        )}
 
         </Modal> 
       }
