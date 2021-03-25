@@ -5,36 +5,98 @@ import  Text  from '../../foundation/Text';
 import TextField from '../../commons/input/TextField';
 import { Button } from '../../commons/Button';
 import FormWrapper from './FormWrapper';
+import { Lottie } from '@crello/react-lottie';
+import sucessoAnimation from './animations/sucesso.json';
+import erroAnimation from './animations/error.json';
+
 import {
   CloseIcon
 } from './icons';
 
-function FormContent(){
+function FormContent( { buttonClose } ){
 
     const [userInfo, setUserInfo] = React.useState({
-        nome: '',
-        email: '',
-        mensagem: ''
+      nome: '',
+      email: '',
+      mensagem: ''
+    });
+  
+    const [emailValido, setEmailValido] = React.useState(true);
+    const [avisoEmailInvalido, setAvisoEmailInvalido] = React.useState('');
+
+    const formStates = {
+      DEFAULT: 'DEFAULT',
+      LOADING: 'LOADING',
+      DONE: 'DONE',
+      ERROR: 'ERROR',
+    };
+  
+    const [isFormSubmited, setIsFormSubmited] = React.useState(false);
+    const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
+
+    const [mensagemEnviada, setMensagemEnviada] = React.useState('');
+
+    function handleChange(event) {
+      console.log("E aqui no change, entra?")
+      const fieldName = event.target.getAttribute('name');
+      setUserInfo({
+        ...userInfo,
+        [fieldName]: event.target.value,
       });
+    }    
 
-      function handleChange(event) {
-        const fieldName = event.target.getAttribute('name');
-        setUserInfo({
-          ...userInfo,
-          [fieldName]: event.target.value,
+    function handleEmail(event){
+      
+      var re = /\S+@\S+\.\S+/;
+      if(!re.test(event.target.value)){
+        setEmailValido(false);
+        setAvisoEmailInvalido("Seu e-mail é inválido.")
+      }else{
+        setAvisoEmailInvalido('');
+      }
+    }
+
+    function handleSubmit(event){
+      event.preventDefault();
+
+      setIsFormSubmited(true);
+
+      const userDTO = {
+          nome: userInfo.nome,
+          email: userInfo.email,
+          mensagem: userInfo.mensagem
+      };
+
+      fetch('hhttps://contact-form-api-jamstack.herokuapp.com/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userDTO),
+      }).then((respostaDoServidor) => {
+        if (respostaDoServidor.ok) {
+          return respostaDoServidor.json();
+        }
+        throw new Error('Não foi possível enviar sua mensagem :(');
+      })
+        .then((respostaConvertidadeEmObjeto) => {
+          setSubmissionStatus(formStates.DONE);
+          setMensagemEnviada("Sua mensagem foi enviada com sucesso!")
+        })
+        .catch((error) => {
+          setSubmissionStatus(formStates.ERROR);
+          setMensagemEnviada("Não foi possível enviar sua mensagem!")
         });
-      }    
+      }
 
-    const isFormInvalid = userInfo.nome.length === 0 || userInfo.email.length === 0 || userInfo.mensagem.length ===0;
+    const isFormInvalid = !emailValido || userInfo.nome.length === 0 || userInfo.email.length === 0 || userInfo.mensagem.length ===0;
     
     return(
-
-      
-      <FormWrapper  onSubmit={(event) => {
-                event.preventDefault();
-                console.log("Formulário enviado");
-        }}>
+       
+      <FormWrapper onSubmit={handleSubmit} >
       <Grid.Col >
+      
+        {buttonClose}
           <Grid.Row
             justifyContent="space-between"
             alignItems="center"
@@ -83,15 +145,29 @@ function FormContent(){
             }}
 
           > 
+  
           <TextField
-            variant="titleModal"
-            tag="input"
-            placeholder="email"
-            name="email"
-            value={userInfo.email}
-            onChange={handleChange}
-            height="48px"
-          />
+                  variant="titleModal"
+                  tag="input"
+                  placeholder="email"
+                  name="email"
+                  value={userInfo.email}
+                  onChange={handleChange}
+                  onBlur={handleEmail}
+                  height="48px"
+                >
+              </TextField>
+
+              {!emailValido && (
+              <Text
+                marginTop="-15px"
+                marginBottom="15px"
+                color="red"
+              
+              >
+                {avisoEmailInvalido}
+              </Text>
+            )}
       </Grid.Row>
 
         <Grid.Row >
@@ -115,15 +191,40 @@ function FormContent(){
         > 
           Enviar           
         </Button>
-      
+          {isFormSubmited && submissionStatus === formStates.DONE && (
+          <Box>
+            <Lottie
+              width="150px"
+              height="150px"
+              config={{ animationData: sucessoAnimation, loop: true, autoplay: true }}
+            />
+          </Box>
+        )}
 
+        {isFormSubmited && submissionStatus === formStates.ERROR && (
+        <Box>
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{ animationData: erroAnimation, loop: true, autoplay: true }}
+          />
+           <Text
+                marginTop="-15px"
+                marginBottom="15px"
+                color="red"
+              
+            >
+              {mensagemEnviada}
+            </Text>
+        </Box>
+        )}
       </Grid.Col>
        </FormWrapper>
 
     );
 }
 
-export default function FormContato({ propsDoModal }){
+export default function FormContato({ propsDoModal } ){
     return (
       <Grid.Row
       marginLeft={0}
@@ -151,7 +252,7 @@ export default function FormContato({ propsDoModal }){
             // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsDoModal}
         >
-          <FormContent />
+          <FormContent {...propsDoModal} />
         </Box>
       </Grid.Col>
     </Grid.Row>

@@ -51,7 +51,12 @@ export default function Home() {
             setModalOpen(false);
           }}  >
           {(propsDoModal) => (
-            <FormContato propsDoModal={propsDoModal} />
+            <FormContato 
+            onClose={() => {
+              setOpen(false);
+              setTimeout(() => setIsFormSubmited(false), 1000);
+            }}
+            propsDoModal={propsDoModal} />
         )}
 
         </Modal> 

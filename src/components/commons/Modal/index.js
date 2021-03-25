@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, {css} from 'styled-components';
 import {motion} from 'framer-motion';
+import { Button } from '../Button';
+import { CloseIcon } from '../../patterns/formContato/icons';
 
 const ModalWrapper = styled.div`
   display: flex;
@@ -59,8 +61,11 @@ function Modal({ isOpen, onClose, children}){
             }}
           >
             {children({
-              'data-modal-safe-area': 'true',
-            })}
+          'data-model-safe-area': 'true',
+          buttonClose: (
+            <CloseIcon onClick={onClose}/>
+          ),
+        })}
             </motion.div>
         </ModalWrapper>
       );
