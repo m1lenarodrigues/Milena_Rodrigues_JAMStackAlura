@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import styled from 'styled-components';
 
 export const Projetos = styled.div`
     background-color: ${({ theme }) => theme.colors.background.main.color};

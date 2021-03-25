@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components';
-import { CloseCircle, Email } from '@styled-icons/evaicons-solid';
+/* eslint-disable import/prefer-default-export */
+import styled from 'styled-components';
+import { CloseCircle } from '@styled-icons/evaicons-solid';
 
 export const CloseIcon = styled(CloseCircle)`
   width: 20px;
@@ -8,4 +9,3 @@ export const CloseIcon = styled(CloseCircle)`
   margin-top: 7px;
   margin-left: 296px;
 `;
-

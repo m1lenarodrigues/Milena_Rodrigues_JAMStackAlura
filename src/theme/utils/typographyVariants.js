@@ -6,10 +6,10 @@ export const typographyVariants = {
     fontWeight: '400',
     lineHeight: '72px',
     letterSpacing: '.04em',
-    fontFamily:"Amatic SC",
+    fontFamily: 'Amatic SC',
   },
-  titleModal :{
-    
+  titleModal: {
+
   },
   // [subTitle]
   subTitle: {
@@ -35,9 +35,9 @@ export const typographyVariants = {
   },
 
   smallestException: {
-    
-    fontSize: '25px', 
-    fontweight:'bold',
+
+    fontSize: '25px',
+    fontweight: 'bold',
     lineHeight: 1, // 100%
   },
 };

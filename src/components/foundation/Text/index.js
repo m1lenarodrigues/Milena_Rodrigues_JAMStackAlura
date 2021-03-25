@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import get from 'lodash/get';
 import styled, { css } from 'styled-components';
@@ -57,7 +59,7 @@ export const TextStyleVariants = {
   subTitle,
   title,
   smallestException,
-  titleModal
+  titleModal,
 
 };
 

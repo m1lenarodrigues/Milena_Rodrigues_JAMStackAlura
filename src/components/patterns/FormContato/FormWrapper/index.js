@@ -11,7 +11,7 @@ const FormWrapper = styled.form`
   box-shadow: 1px 1px 8px 1px black;
 
     ${breakpointsMedia({
-      md: css`
+    md: css`
         h2 {
           ${typographyVariants.title}
         }
@@ -19,7 +19,7 @@ const FormWrapper = styled.form`
           ${typographyVariants.title}
         }
       `,
-    })}
+  })}
 `;
 
 export default FormWrapper;

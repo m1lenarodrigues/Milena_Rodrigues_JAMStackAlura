@@ -1,12 +1,14 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/no-unresolved */
 import React from 'react';
-import styled, { css }  from 'styled-components';
+import styled, { css } from 'styled-components';
 import Capa from '../src/components/commons/Capa';
 import Menu from '../src/components/commons/Menu';
 import WrapperProjetos from '../src/components/commons/WrapperProjetos';
 import Footer from '../src/components/commons/Footer';
 import { breakpointsMedia } from '../src/theme/utils/breakpointsMedia';
 import { Button } from '../src/components/commons/Button';
-import  Modal  from '../src/components/commons/Modal';
+import Modal from '../src/components/commons/Modal';
 import FormContato from '../src/components/patterns/formContato';
 
 export default function Home() {
@@ -22,19 +24,19 @@ export default function Home() {
     overflow-x: hidden; 
     
     ${breakpointsMedia({
-      lg: css`
+    lg: css`
       min-width: 1200px;
           `,
-      md: css`
+    md: css`
       min-width:768px;
           `,
-      xl: css`
+    xl: css`
       min-width: 992px;
           `,
-      sm: css`
+    sm: css`
       min-width: 576px;
         `,
-    })} 
+  })} 
   
   `;
 
@@ -44,23 +46,26 @@ export default function Home() {
     <div>
       <Geral>
 
-     {isModalOpen && 
+        {isModalOpen
+        && (
         <Modal
           isOpen={isModalOpen}
           onClose={() => {
             setModalOpen(false);
-          }}  >
+          }}
+        >
           {(propsDoModal) => (
-            <FormContato 
-            onClose={() => {
-              setOpen(false);
-              setTimeout(() => setIsFormSubmited(false), 1000);
-            }}
-            propsDoModal={propsDoModal} />
-        )}
+            <FormContato
+              onClose={() => {
+                setOpen(false);
+                setTimeout(() => setIsFormSubmited(false), 1000);
+              }}
+              propsDoModal={propsDoModal}
+            />
+          )}
 
-        </Modal> 
-      }
+        </Modal>
+        )}
         <Capa />
         <Menu />
         <WrapperProjetos />
@@ -68,7 +73,8 @@ export default function Home() {
         <Button
           onClick={() => {
             setModalOpen(!isModalOpen);
-          }}>
+          }}
+        >
           Entrar em contato
         </Button>
         <Footer />

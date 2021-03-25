@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -20,7 +21,6 @@ const Input = styled(Text)`
   border-bottom-color: #f4aec9;
 `;
 
-
 Input.defaultProps = {
   tag: 'input',
   variant: 'paragraph1',
@@ -32,6 +32,7 @@ export default function TextField({
   onChange,
   onBlur,
   value,
+  // eslint-disable-next-line react/prop-types
   tag,
 }) {
   return (

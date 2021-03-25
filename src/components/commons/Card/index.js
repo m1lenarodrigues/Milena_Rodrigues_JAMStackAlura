@@ -7,7 +7,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React from 'react';
-import styled, { css }from 'styled-components';
+import styled, { css } from 'styled-components';
 import CardLink from '../CardLink';
 import CardTitulo from '../CardTitulo';
 import CardImagem from '../CardImagem';

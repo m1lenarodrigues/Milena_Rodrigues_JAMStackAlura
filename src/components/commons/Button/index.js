@@ -1,7 +1,6 @@
 /* eslint-disable func-names */
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
-import { propToStyle } from '../../../theme/utils/propToStyle';
 
 export const Button = styled.button`
     border :0;

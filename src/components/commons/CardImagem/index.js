@@ -8,12 +8,12 @@ export const CardImagem = styled.img`
     border: 2px solid #000;
 
     ${breakpointsMedia({
-        xs: css`
+    xs: css`
           `,
-        md: css`
+    md: css`
          
           `,
-      })}
+  })}
 `;
 
 export default CardImagem;
