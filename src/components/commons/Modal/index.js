@@ -5,6 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { CloseIcon } from '../../patterns/formContato/icons';
+import {motion} from 'framer-motion';
 
 const ModalWrapper = styled.div`
   display: flex;
