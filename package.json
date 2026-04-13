@@ -10,7 +10,7 @@
     "commit": "cz"
   },
   "dependencies": {
-    "@commitlint/cli": "^12.0.1",
+    "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^12.0.1",
     "@crello/react-lottie": "0.0.11",
     "@styled-icons/boxicons-regular": "^10.23.0",
