@@ -15,7 +15,7 @@
     "@crello/react-lottie": "0.0.11",
     "@styled-icons/boxicons-regular": "^10.23.0",
     "@styled-icons/evaicons-solid": "^10.18.0",
-    "commitlint": "^12.0.1",
+    "commitlint": "^20.5.0",
     "framer-motion": "^4.0.0",
     "next": "latest",
     "react": "^17.0.2",
